@@ -1,0 +1,60 @@
+{
+    "random_seed": 42,
+    "test_size": 0.2,
+    "validation_rows": 8675,
+    "accuracy": 0.7806340057636888,
+    "macro_f1": 0.7549283126480115,
+    "weighted_f1": 0.7853763102425074,
+    "macro_precision": 0.7416385706275047,
+    "macro_recall": 0.779431996259962,
+    "confusion_matrix": [
+        [
+            1093,
+            160,
+            214
+        ],
+        [
+            439,
+            3727,
+            668
+        ],
+        [
+            214,
+            208,
+            1952
+        ]
+    ],
+    "classification_report": {
+        "hate_speech": {
+            "precision": 0.6260022909507446,
+            "recall": 0.7450579413769598,
+            "f1-score": 0.6803610333022098,
+            "support": 1467.0
+        },
+        "offensive_language": {
+            "precision": 0.9101343101343101,
+            "recall": 0.7709971038477451,
+            "f1-score": 0.8348079292193975,
+            "support": 4834.0
+        },
+        "neither": {
+            "precision": 0.6887791107974595,
+            "recall": 0.8222409435551812,
+            "f1-score": 0.7496159754224271,
+            "support": 2374.0
+        },
+        "accuracy": 0.7806340057636888,
+        "macro avg": {
+            "precision": 0.7416385706275047,
+            "recall": 0.779431996259962,
+            "f1-score": 0.7549283126480115,
+            "support": 8675.0
+        },
+        "weighted avg": {
+            "precision": 0.8015096513022669,
+            "recall": 0.7806340057636888,
+            "f1-score": 0.7853763102425074,
+            "support": 8675.0
+        }
+    }
+}

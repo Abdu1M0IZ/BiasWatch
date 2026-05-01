@@ -1,0 +1,121 @@
+Dataset
+-------
+Dataset path: data/processed/processed_dataset.csv
+Random seed: 42
+Validation size: 0.2
+Stratified split: yes
+
+Leakage Control
+---------------
+The train/validation split was performed before fitting TF-IDF. Each model pipeline fitted TF-IDF only on the training split. The validation split was only transformed using the fitted vectorizer.
+
+Model Results
+-------------
+
+Model: logreg_basic
+Accuracy: 0.7806
+Macro F1: 0.7549
+Weighted F1: 0.7854
+Macro Precision: 0.7416
+Macro Recall: 0.7794
+Confusion Matrix:
+[
+    [
+        1093,
+        160,
+        214
+    ],
+    [
+        439,
+        3727,
+        668
+    ],
+    [
+        214,
+        208,
+        1952
+    ]
+]
+
+Model: logreg_tuned
+Accuracy: 0.7832
+Macro F1: 0.7572
+Weighted F1: 0.7871
+Macro Precision: 0.7449
+Macro Recall: 0.7775
+Confusion Matrix:
+[
+    [
+        1082,
+        180,
+        205
+    ],
+    [
+        401,
+        3784,
+        649
+    ],
+    [
+        201,
+        245,
+        1928
+    ]
+]
+
+Model: linear_svm
+Accuracy: 0.7708
+Macro F1: 0.7377
+Weighted F1: 0.7721
+Macro Precision: 0.7339
+Macro Recall: 0.7425
+Confusion Matrix:
+[
+    [
+        973,
+        289,
+        205
+    ],
+    [
+        331,
+        3931,
+        572
+    ],
+    [
+        177,
+        414,
+        1783
+    ]
+]
+
+Model: naive_bayes
+Accuracy: 0.6707
+Macro F1: 0.5372
+Weighted F1: 0.6292
+Macro Precision: 0.7236
+Macro Recall: 0.5206
+Confusion Matrix:
+[
+    [
+        267,
+        965,
+        235
+    ],
+    [
+        36,
+        4471,
+        327
+    ],
+    [
+        12,
+        1282,
+        1080
+    ]
+]
+
+Best Model
+----------
+Best model by macro-F1: logreg_tuned
+
+Interpretation Notes
+--------------------
+Accuracy is not enough for this dataset because the classes are imbalanced. Macro-F1 is used as the main comparison metric because it gives equal importance to hate_speech, offensive_language, and neither. Linear SVM is expected to perform well because margin-based classifiers usually work strongly with sparse TF-IDF features. Logistic Regression is easier to interpret and can provide probabilities. Naive Bayes is very fast but usually less flexible than Logistic Regression or SVM.

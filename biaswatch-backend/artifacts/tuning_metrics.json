@@ -1,0 +1,118 @@
+{
+    "best_model_name": "logistic_regression",
+    "best_params": {
+        "model__C": 1.0,
+        "model__class_weight": "balanced",
+        "tfidf__max_features": 50000,
+        "tfidf__min_df": 2,
+        "tfidf__ngram_range": [
+            1,
+            2
+        ],
+        "tfidf__sublinear_tf": true
+    },
+    "best_cv_macro_f1": 0.7446238134107764,
+    "validation_metrics": {
+        "accuracy": 0.7815561959654179,
+        "macro_f1": 0.7559043102123267,
+        "weighted_f1": 0.78622302677376,
+        "macro_precision": 0.7428931007657366,
+        "macro_recall": 0.7800090270062268,
+        "confusion_matrix": [
+            [
+                1090,
+                161,
+                216
+            ],
+            [
+                428,
+                3731,
+                675
+            ],
+            [
+                211,
+                204,
+                1959
+            ]
+        ],
+        "classification_report": {
+            "hate_speech": {
+                "precision": 0.6304222093695778,
+                "recall": 0.7430129516019086,
+                "f1-score": 0.6821026282853567,
+                "support": 1467.0
+            },
+            "offensive_language": {
+                "precision": 0.910888671875,
+                "recall": 0.7718245759205626,
+                "f1-score": 0.8356103023516237,
+                "support": 4834.0
+            },
+            "neither": {
+                "precision": 0.6873684210526316,
+                "recall": 0.8251895534962089,
+                "f1-score": 0.75,
+                "support": 2374.0
+            },
+            "accuracy": 0.7815561959654179,
+            "macro avg": {
+                "precision": 0.7428931007657366,
+                "recall": 0.7800090270062268,
+                "f1-score": 0.7559043102123267,
+                "support": 8675.0
+            },
+            "weighted avg": {
+                "precision": 0.802291395108688,
+                "recall": 0.7815561959654179,
+                "f1-score": 0.78622302677376,
+                "support": 8675.0
+            }
+        }
+    },
+    "all_model_summaries": [
+        {
+            "model_name": "logistic_regression",
+            "best_cv_macro_f1": 0.7446238134107764,
+            "best_params": {
+                "model__C": 1.0,
+                "model__class_weight": "balanced",
+                "tfidf__max_features": 50000,
+                "tfidf__min_df": 2,
+                "tfidf__ngram_range": [
+                    1,
+                    2
+                ],
+                "tfidf__sublinear_tf": true
+            }
+        },
+        {
+            "model_name": "linear_svm",
+            "best_cv_macro_f1": 0.7319153267308119,
+            "best_params": {
+                "model__C": 1.0,
+                "model__class_weight": "balanced",
+                "tfidf__max_features": 50000,
+                "tfidf__min_df": 1,
+                "tfidf__ngram_range": [
+                    1,
+                    2
+                ],
+                "tfidf__sublinear_tf": true
+            }
+        },
+        {
+            "model_name": "naive_bayes",
+            "best_cv_macro_f1": 0.6171101570851962,
+            "best_params": {
+                "model__alpha": 0.5,
+                "tfidf__max_features": 30000,
+                "tfidf__min_df": 1,
+                "tfidf__ngram_range": [
+                    1,
+                    2
+                ],
+                "tfidf__sublinear_tf": true
+            }
+        }
+    ]
+}

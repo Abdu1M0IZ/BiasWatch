@@ -1,0 +1,82 @@
+BiasWatch Hyperparameter Tuning Report
+======================================
+
+Dataset
+-------
+Dataset path: data/processed/processed_dataset.csv
+Random seed: 42
+Validation size: 0.2
+Split type: stratified train/validation split
+
+Tuning Method
+-------------
+GridSearchCV was used to brute-force multiple hyperparameter combinations for Logistic Regression, Linear SVM, and Naive Bayes. The scoring metric was macro-F1 because the dataset is imbalanced and all classes should be treated as important.
+
+Models Tuned
+------------
+Model: logistic_regression
+Best CV macro-F1: 0.7446
+Best params: {'model__C': 1.0, 'model__class_weight': 'balanced', 'tfidf__max_features': 50000, 'tfidf__min_df': 2, 'tfidf__ngram_range': (1, 2), 'tfidf__sublinear_tf': True}
+
+Model: linear_svm
+Best CV macro-F1: 0.7319
+Best params: {'model__C': 1.0, 'model__class_weight': 'balanced', 'tfidf__max_features': 50000, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 2), 'tfidf__sublinear_tf': True}
+
+Model: naive_bayes
+Best CV macro-F1: 0.6171
+Best params: {'model__alpha': 0.5, 'tfidf__max_features': 30000, 'tfidf__min_df': 1, 'tfidf__ngram_range': (1, 2), 'tfidf__sublinear_tf': True}
+
+Best Model
+----------
+Best model name: logistic_regression
+Best CV macro-F1: 0.7446
+Best parameters: {'model__C': 1.0, 'model__class_weight': 'balanced', 'tfidf__max_features': 50000, 'tfidf__min_df': 2, 'tfidf__ngram_range': (1, 2), 'tfidf__sublinear_tf': True}
+
+Validation Results of Best Model
+--------------------------------
+Accuracy: 0.7816
+Macro F1: 0.7559
+Weighted F1: 0.7862
+Macro Precision: 0.7429
+Macro Recall: 0.7800
+
+Confusion Matrix
+----------------
+[
+    [
+        1090,
+        161,
+        216
+    ],
+    [
+        428,
+        3731,
+        675
+    ],
+    [
+        211,
+        204,
+        1959
+    ]
+]
+
+Classification Report
+---------------------
+                    precision    recall  f1-score   support
+
+       hate_speech       0.63      0.74      0.68      1467
+offensive_language       0.91      0.77      0.84      4834
+           neither       0.69      0.83      0.75      2374
+
+          accuracy                           0.78      8675
+         macro avg       0.74      0.78      0.76      8675
+      weighted avg       0.80      0.78      0.79      8675
+
+
+Leakage Control
+---------------
+The validation set was kept separate from the tuning process. GridSearchCV was applied only on the training split. Inside each cross-validation fold, the TF-IDF vectorizer was fitted only on that fold's training portion through the scikit-learn pipeline. The final validation set was used only once for final evaluation.
+
+Engineering Note
+----------------
+A higher number of hyperparameter combinations can improve the chance of finding a better model, but it also increases training time. Macro-F1 was prioritized over accuracy because the moderation task requires reasonable performance across hate_speech, offensive_language, and neither.

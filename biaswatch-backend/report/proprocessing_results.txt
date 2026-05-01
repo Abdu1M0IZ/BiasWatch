@@ -1,0 +1,42 @@
+Final Processed Dataset
+------------------------
+Processed dataset path: data/processed/processed_dataset.csv
+
+Rows after preprocessing:
+source
+davidson      24184
+hatexplain    19188
+
+Total rows after preprocessing: 43372
+
+Final Class Distribution
+-------------------------
+Class ID counts:
+class
+0     7334
+1    24167
+2    11871
+
+Label name counts:
+label_name
+offensive_language    24167
+neither               11871
+hate_speech            7334
+
+Class percentages:
+class
+0    16.91
+1    55.72
+2    27.37
+
+Label mapping:
+0 = hate_speech
+1 = offensive_language
+2 = neither
+
+Tweet Length Statistics
+-------------------------
+Minimum length: 3
+Maximum length: 347
+Mean length: 91.23
+Median length: 75.0

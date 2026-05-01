@@ -1,0 +1,15 @@
+{
+    "total_requests": 200,
+    "concurrency": 20,
+    "success_count": 200,
+    "failure_count": 0,
+    "success_rate": 1.0,
+    "total_time_seconds": 0.6885,
+    "throughput_requests_per_second": 290.4723,
+    "mean_latency_seconds": 0.0648,
+    "median_latency_seconds": 0.0547,
+    "p95_latency_seconds": 0.1664,
+    "status_codes": {
+        "200": 200
+    }
+}

@@ -1,0 +1,50 @@
+Model
+-----
+TF-IDF Vectorizer + Logistic Regression
+
+Train/Validation Split
+----------------------
+Test size: 0.2
+Random seed: 42
+Validation rows: 8675
+Stratified split: yes
+
+Metrics
+-------
+Accuracy: 0.7806
+Macro F1: 0.7549
+Weighted F1: 0.7854
+Macro Precision: 0.7416
+Macro Recall: 0.7794
+
+Confusion Matrix
+----------------
+[
+    [
+        1093,
+        160,
+        214
+    ],
+    [
+        439,
+        3727,
+        668
+    ],
+    [
+        214,
+        208,
+        1952
+    ]
+]
+
+Classification Report
+---------------------
+                    precision    recall  f1-score   support
+
+       hate_speech       0.63      0.75      0.68      1467
+offensive_language       0.91      0.77      0.83      4834
+           neither       0.69      0.82      0.75      2374
+
+          accuracy                           0.78      8675
+         macro avg       0.74      0.78      0.75      8675
+      weighted avg       0.80      0.78      0.79      8675
