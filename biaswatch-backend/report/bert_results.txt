@@ -1,0 +1,51 @@
+BiasWatch BERT Model Evaluation Report
+=====================================
+
+Model Configuration
+-------------------
+Model checkpoint: distilbert-base-uncased
+Max length: 128
+Epochs: 1.0
+Learning rate: 2e-05
+Train batch size: 2
+Eval batch size: 4
+
+Evaluation Metrics
+------------------
+Accuracy: 0.8193
+Macro F1: 0.7926
+Weighted F1: 0.8182
+Macro Precision: 0.8018
+Macro Recall: 0.7850
+
+Confusion Matrix
+----------------
+[
+    [
+        1020,
+        340,
+        107
+    ],
+    [
+        191,
+        4218,
+        425
+    ],
+    [
+        102,
+        403,
+        1869
+    ]
+]
+
+Classification Report
+---------------------
+                    precision    recall  f1-score   support
+
+       hate_speech       0.78      0.70      0.73      1467
+offensive_language       0.85      0.87      0.86      4834
+           neither       0.78      0.79      0.78      2374
+
+          accuracy                           0.82      8675
+         macro avg       0.80      0.79      0.79      8675
+      weighted avg       0.82      0.82      0.82      8675
